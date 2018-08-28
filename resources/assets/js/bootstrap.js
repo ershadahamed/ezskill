@@ -1,17 +1,43 @@
 
 window._ = require('lodash');
-window.Popper = require('popper.js').default;
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
 
 try {
     window.$ = window.jQuery = require('jquery');
 
+    // Basic blank page
     require('bootstrap');
+    require('bootstrap-select');
+    require('jquery-slimscroll');
+    require('node-waves');
+
+    // morris.JS
+    require('jquery-countto');
+    window.Raphael = require('raphael');
+    require('morris.js/morris');
+    require('chart.js');
+    require('flot-charts/jquery.flot');
+    require('flot-charts/jquery.flot.resize');
+    require('flot-charts/jquery.flot.pie');
+    require('flot-charts/jquery.flot.categories');
+    require('flot-charts/jquery.flot.time');
+    window.sparkline = require('jquery-sparkline');
+
+    // Forms
+    require('jquery-validation');
+    require('jquery-steps/build/jquery.steps');
+    require('sweetalert');
+
+    //DataTables
+    require('jszip');
+    require('pdfmake/build/pdfmake');
+    require('datatables.net/js/jquery.dataTables');
+    require('datatables.net-bs/js/dataTables.bootstrap');
+    require('datatables.net-buttons-bs');
+    require('datatables.net-buttons/js/buttons.colVis.js');
+    require('datatables.net-buttons/js/buttons.flash.js');
+    require('datatables.net-buttons/js/buttons.html5.js');
+    require('datatables.net-buttons/js/buttons.print.js');
+
 } catch (e) {}
 
 /**
