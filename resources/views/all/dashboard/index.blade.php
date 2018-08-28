@@ -11,7 +11,7 @@
                             <h2>Dashboard</h2>
                         </div>
                         <div class="body">
-                            <p class="col-teal">Hi <b>username</b>, selamat datang ke sistem ezSkill</p>
+                            <p class="col-teal">Hi <b>{{ Auth::user()->name }}</b>, selamat datang ke sistem ezSkill</p>
                         </div>
                     </div>
                 </div>

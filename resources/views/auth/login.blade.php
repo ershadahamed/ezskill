@@ -1,71 +1,85 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('title', 'Login | EzSkill')
+@section('class-name', 'login-page')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">PPT ezSkill</a>
+            <small>Daftar Masuk</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                <form id="sign_in" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="msg">Daftar Masuk Untuk Mulakan Sesi Anda</div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" id="ic_num" class="form-control" name="ic_num" placeholder="ID Pengguna" value="{{ old('ic_num') }}" required autofocus>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" id="password" class="form-control" name="password" placeholder="Katalaluan" required>
                         </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                            <input type="checkbox" id="remember" class="filled-in chk-col-pink" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label for="remember">Ingat Saya</label>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-pink waves-effect" type="submit">Masuk</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="{{ route('register') }}">Daftar Sekarang!</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="{{ route('password.request') }}">Lupa Katalaluan?</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
+@endsection
+
+@section('custom-script')
+    <script>
+        $(function () {
+
+            @if(count($errors) > 0)
+            @foreach($errors->all() as $error)
+            swal({
+                title: "Invalid Data",
+                text: "{{$error}}",
+                icon: "warning",
+                button: true,
+            });
+            @endforeach
+            @endif
+
+            $('#sign_in').validate({
+                highlight: function (input) {
+                    console.log(input);
+                    $(input).parents('.form-line').addClass('error');
+                },
+                unhighlight: function (input) {
+                    $(input).parents('.form-line').removeClass('error');
+                },
+                errorPlacement: function (error, element) {
+                    $(element).parents('.input-group').append(error);
+                }
+            });
+        });
+    </script>
 @endsection
