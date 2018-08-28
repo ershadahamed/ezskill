@@ -27,7 +27,7 @@
                 <span>Roles</span>
             </a>
         </li>
-        <li class="{{ Request::path() == 'admin/pay-setting' ? 'active' : '' }}">
+        <li class="{{ Request::path() == 'admin/pay-setting' || Request::path() == 'admin/pay-setting/create' ? 'active' : '' }}">
             <a href="{{ route('pay-setting.index') }}">
                 <i class="material-icons">monetization_on</i>
                 <span>Payment Setting</span>
@@ -39,8 +39,8 @@
                 <span>Transaction Details</span>
             </a>
         </li>
-        <li class="{{ Request::path() == '/users' ? 'active' : '' }}">
-            <a href="">
+        <li class="{{ Request::path() == 'users' ? 'active' : '' }}">
+            <a href="{{ route('user.index') }}">
                 <i class="material-icons">face</i>
                 <span>Users</span>
             </a>

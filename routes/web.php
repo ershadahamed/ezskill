@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/roles', 'RoleController@index')->name('roles');
 
         Route::resource('pay-setting', 'PaymentSettingController');
+
+        Route::resource('user', 'UserController');
     });
 
 });

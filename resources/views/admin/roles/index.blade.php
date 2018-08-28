@@ -43,6 +43,42 @@
                     </div>
                 </div>
                 <!-- #END# Roles Info -->
+
+                <!-- Answered Tickets -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-teal">
+                            <div class="font-bold m-b--35">Jumlah Pengguna Berdaftar</div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    MY
+                                    <span class="pull-right"><b>0</b> <small>ORG</small></span>
+                                </li>
+                                <li>
+                                    JPK
+                                    <span class="pull-right"><b>0</b> <small>ORG</small></span>
+                                </li>
+                                <li>
+                                    ADMIN
+                                    <span class="pull-right"><b>1</b> <small>ORG</small></span>
+                                </li>
+                                <li>
+                                    CO
+                                    <span class="pull-right"><b>0</b> <small>ORG</small></span>
+                                </li>
+                                <li>
+                                    PPL
+                                    <span class="pull-right"><b>0</b> <small>ORG</small></span>
+                                </li>
+                                <li>
+                                    PB
+                                    <span class="pull-right"><b>0</b> <small>ORG</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Answered Tickets -->
             </div>
         </div>
     </section>

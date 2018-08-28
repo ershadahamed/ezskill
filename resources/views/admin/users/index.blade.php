@@ -24,7 +24,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="{{ route('pay-setting.create') }}">Add New</a></li>
+                                        <li><a href="#">Add New</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -40,9 +40,10 @@
                                     <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Amount - RM</th>
-                                        <th>Bill Plz Token</th>
-                                        <th>Desc</th>
+                                        <th>IC Num</th>
+                                        <th>Email</th>
+                                        <th>Phone (M)</th>
+                                        <th>User Type</th>
                                         <th>Created At</th>
                                         <th>Actions</th>
                                     </tr>
@@ -50,26 +51,32 @@
                                     <tfoot>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Amount - RM</th>
-                                        <th>Bill Plz Token</th>
-                                        <th>Desc</th>
+                                        <th>IC Num</th>
+                                        <th>Email</th>
+                                        <th>Phone (M)</th>
+                                        <th>User Type</th>
                                         <th>Created At</th>
                                         <th>Actions</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
 
-                                        @foreach($settings as $setting)
-                                            <tr>
-                                                <td>{{ $setting->name }}</td>
-                                                <td>{{ number_format($setting->amount, 2) }}</td>
-                                                <td>{{ number_format($setting->billpls_token) }}</td>
-                                                <td>{{ $setting->description }}</td>
-                                                <td>{{ $setting->updated_at->format('d-n-Y H:i:s') }}</td>
-                                                <td width="10%" class="align-center"><a title="Edit" class="btn btn-info btn-xs" href=""><i class="material-icons">edit</i></a> |
-                                                    <a title="Delete" class="btn btn-danger btn-xs" href=""><i class="material-icons">delete</i></a></td>
-                                            </tr>
-                                        @endforeach
+                                    @foreach($users as $user)
+                                        <tr>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->ic_num }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->profile->phone_mobile }}</td>
+                                            <td>
+                                                @foreach($user->roles as $role)
+                                                    {{ $role->short_name }},
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $user->updated_at->format('d-n-Y H:i:s') }}</td>
+                                            <td width="10%" class="align-center"><a title="Edit" class="btn btn-info btn-xs" href=""><i class="material-icons">edit</i></a> |
+                                                <a title="Delete" class="btn btn-danger btn-xs" href=""><i class="material-icons">delete</i></a></td>
+                                        </tr>
+                                    @endforeach
 
                                     </tbody>
                                 </table>

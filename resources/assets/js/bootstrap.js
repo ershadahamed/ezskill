@@ -2,7 +2,7 @@
 window._ = require('lodash');
 
 try {
-    global.$ = global.jQuery = require('jquery');
+    window.$ = window.jQuery = require('jquery');
 
     // Basic blank page
     require('bootstrap');
