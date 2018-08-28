@@ -1,0 +1,24 @@
+// Font Awesome
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// Bootstrap Core Css
+@import '~bootstrap/dist/css/bootstrap.css';
+// Waves Effect Css
+@import '~node-waves/dist/waves.css';
+// Animation Css
+@import '~animate.css/animate.css';
+
+// JQuery DataTable Css
+@import '~datatables.net-bs/css/dataTables.bootstrap.css';
+// Morris Chart Css
+@import '~morris.js/morris.css';
+
+// Milestone
+// @import '../css/plugin/milestones.css';
+
+// Custom Css
+@import '../css/style.css';
+// AdminBSB Themes. You can choose a theme from css/themes instead of get all themes
+@import '../css/themes/all-themes.css';
