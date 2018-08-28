@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', '| Payment List Type')
+@section('title', '| Users')
 
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    Payment List
-                    <small>Available payment structure for calon</small>
+                    Users
+                    <small>Manage user at admin level, able to create all type of users</small>
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="header bg-teal">
                             <h2>
-                                PAYMENT LIST
+                                USERS LIST
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">

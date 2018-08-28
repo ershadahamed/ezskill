@@ -33,13 +33,13 @@
                 <span>Payment Setting</span>
             </a>
         </li>
-        <li class="{{ Request::path() == '/payment' ? 'active' : '' }}">
-            <a href="">
+        <li class="{{ Request::path() == 'admin/transaction' ? 'active' : '' }}">
+            <a href="{{ route('transaction') }}">
                 <i class="material-icons">payment</i>
                 <span>Transaction Details</span>
             </a>
         </li>
-        <li class="{{ Request::path() == 'users' ? 'active' : '' }}">
+        <li class="{{ Request::path() == 'admin/user' ? 'active' : '' }}">
             <a href="{{ route('user.index') }}">
                 <i class="material-icons">face</i>
                 <span>Users</span>

@@ -30,6 +30,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('pay-setting', 'PaymentSettingController');
 
         Route::resource('user', 'UserController');
+
+        Route::get('/transaction', function(){
+            return view('admin.transaction.index');
+        })->name('transaction');
     });
 
 });

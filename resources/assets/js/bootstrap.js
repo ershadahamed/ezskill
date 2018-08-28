@@ -29,7 +29,10 @@ try {
 
     //DataTables
     require('jszip');
-    require('pdfmake/build/pdfmake');
+    window.pdfMake = require('pdfmake/build/pdfmake.js');
+    // window.font = require('pdfmake/build/vfs_fonts.js');
+    var vfs = require('pdfmake/build/vfs_fonts');
+    window.pdfMake.vfs = vfs.pdfMake.vfs;
     require('datatables.net/js/jquery.dataTables');
     require('datatables.net-bs/js/dataTables.bootstrap');
     require('datatables.net-buttons-bs');
