@@ -12,6 +12,7 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
+        'address1', 'address2', 'postcode', 'city', 'state', 'phone_fixed', 'phone_mobile', 'phone_fax', 'picture',
     ];
 
     public function user(){
