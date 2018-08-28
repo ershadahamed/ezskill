@@ -1,7 +1,7 @@
 <div class="menu">
     <ul class="list">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ Request::path() == 'dashboard' ? 'active' : '' }}">
+        <li class="{{ Request::path() == 'dashboard' || Request::path() == '/' ? 'active' : '' }}">
             <a href="{{route('dashboard')}}">
                 <i class="material-icons">home</i>
                 <span>Dashboard</span>
@@ -19,8 +19,7 @@
                 <span>Status ePortfolio</span>
             </a>
         </li>
-        
-        {{-- @if(in_array('ADMIN', $data_roles)) --}}
+
         <li class="header">ADMIN NAVIGATION</li>
         <li class="{{ Request::path() == 'roles' ? 'active' : '' }}">
             <a href="">
@@ -46,7 +45,6 @@
                 <span>Users</span>
             </a>
         </li>
-        {{-- @endif --}}
 
     </ul>
 </div>
