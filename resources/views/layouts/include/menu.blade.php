@@ -21,14 +21,14 @@
         </li>
 
         <li class="header">ADMIN NAVIGATION</li>
-        <li class="{{ Request::path() == 'roles' ? 'active' : '' }}">
-            <a href="">
+        <li class="{{ Request::path() == 'admin/roles' ? 'active' : '' }}">
+            <a href="{{ route('roles') }}">
                 <i class="material-icons">security</i>
                 <span>Roles</span>
             </a>
         </li>
-        <li class="{{ Request::path() == '/payment' ? 'active' : '' }}">
-            <a href="">
+        <li class="{{ Request::path() == 'admin/pay-setting' ? 'active' : '' }}">
+            <a href="{{ route('pay-setting.index') }}">
                 <i class="material-icons">monetization_on</i>
                 <span>Payment Setting</span>
             </a>

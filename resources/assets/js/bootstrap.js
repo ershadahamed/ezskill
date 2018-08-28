@@ -2,7 +2,7 @@
 window._ = require('lodash');
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    global.$ = global.jQuery = require('jquery');
 
     // Basic blank page
     require('bootstrap');
@@ -38,7 +38,9 @@ try {
     require('datatables.net-buttons/js/buttons.html5.js');
     require('datatables.net-buttons/js/buttons.print.js');
 
-} catch (e) {}
+} catch (e) {
+    console.log(e);
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
