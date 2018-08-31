@@ -37,3 +37,5 @@ Route::group(['middleware' => 'auth'], function(){
     });
 
 });
+
+Route::get('/pdf', 'PdfController@index');
